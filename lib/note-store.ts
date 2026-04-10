@@ -66,4 +66,5 @@ export function addNoteForSession(
   const notes = getNotesForSession(sessionToken);
 
   noteStore.set(sessionToken, [nextNote, ...notes]);
+  return nextNote;
 }

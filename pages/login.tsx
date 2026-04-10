@@ -2,6 +2,7 @@ import type { GetServerSideProps } from "next";
 import Link from "next/link";
 import { LockKeyhole, Mail, ShieldCheck } from "lucide-react";
 
+import ThemeToggle from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -19,8 +20,11 @@ type LoginPageProps = {
 
 export default function LoginPage({ showError }: LoginPageProps) {
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(15,23,42,0.08),_transparent_35%),linear-gradient(135deg,_rgba(255,255,255,1),_rgba(248,250,252,1))] px-4 py-8">
+    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(15,23,42,0.08),_transparent_35%),linear-gradient(135deg,_rgba(255,255,255,1),_rgba(248,250,252,1))] px-4 py-8 dark:bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.15),_transparent_35%),linear-gradient(135deg,_rgba(2,6,23,1),_rgba(15,23,42,1))]">
       <div className="mx-auto grid min-h-[calc(100vh-4rem)] max-w-6xl gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="flex justify-end lg:col-span-2">
+          <ThemeToggle />
+        </div>
         <section className="relative overflow-hidden rounded-3xl border border-border/70 bg-slate-950 p-8 text-slate-50 shadow-2xl lg:p-10">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.28),_transparent_30%),radial-gradient(circle_at_bottom_left,_rgba(16,185,129,0.22),_transparent_30%)]" />
           <div className="relative flex h-full flex-col justify-between gap-10">
@@ -31,36 +35,34 @@ export default function LoginPage({ showError }: LoginPageProps) {
               </div>
               <div className="max-w-xl space-y-4">
                 <p className="text-sm uppercase tracking-[0.35em] text-sky-200/80">
-                  Notes Workspace
+                  Welcome back
                 </p>
                 <h1 className="text-4xl font-semibold tracking-tight text-balance lg:text-5xl">
-                  Sign in to open your server-rendered notes dashboard.
+                  Sign in to open your notes.
                 </h1>
                 <p className="text-base leading-7 text-slate-300">
-                  This flow uses an HTTP-only session cookie, validates
-                  credentials on the server, and sends authenticated users
-                  straight to the notes page.
+                  Use your email and password to view and save your notes safely.
                 </p>
               </div>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-3">
               <div className="rounded-2xl border border-white/10 bg-white/8 p-4 backdrop-blur-sm">
-                <p className="text-sm font-medium text-sky-200">Route</p>
+                <p className="text-sm font-medium text-sky-200">Sign in</p>
                 <p className="mt-2 text-sm leading-6 text-slate-200">
-                  `/login` handles sign-in.
+                  Enter your details to continue.
                 </p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/8 p-4 backdrop-blur-sm">
-                <p className="text-sm font-medium text-sky-200">Protection</p>
+                <p className="text-sm font-medium text-sky-200">Private</p>
                 <p className="mt-2 text-sm leading-6 text-slate-200">
-                  Invalid sessions are redirected.
+                  Your notes are only shown after login.
                 </p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/8 p-4 backdrop-blur-sm">
-                <p className="text-sm font-medium text-sky-200">Demo</p>
+                <p className="text-sm font-medium text-sky-200">Try it</p>
                 <p className="mt-2 text-sm leading-6 text-slate-200">
-                  Use the seeded credentials below.
+                  Use the demo login shown here.
                 </p>
               </div>
             </div>
@@ -138,7 +140,7 @@ export default function LoginPage({ showError }: LoginPageProps) {
               </form>
 
               <p className="text-center text-sm leading-6 text-muted-foreground">
-                Successful login redirects to{" "}
+                After login, you will go to{" "}
                 <Link
                   href="/notes"
                   className="font-medium text-foreground underline-offset-4 hover:underline"

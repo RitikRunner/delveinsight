@@ -16,6 +16,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     return res.redirect(302, "/login");
   }
 
-  addNoteForSession(sessionToken, req.body.title, req.body.content);
-  return res.redirect(302, "/notes");
+  const nextNote = addNoteForSession(
+    sessionToken,
+    req.body.title,
+    req.body.content
+  );
+
+  return res.redirect(302, `/notes?note=${encodeURIComponent(nextNote.id)}`);
 }
