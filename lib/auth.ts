@@ -1,6 +1,6 @@
 import { createHash, randomBytes, timingSafeEqual } from "crypto";
 
-import { sanitizeEmail } from "@/lib/sanitize";
+import { sanitizeEmail } from "./sanitize";
 
 type SessionRecord = {
   createdAt: number;

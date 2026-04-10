@@ -138,7 +138,7 @@ export default function NotesDashboard({
             </p>
           </div>
 
-          <form action="/api/auth/logout" method="post">
+          <form action="/auth/logout" method="post">
             <Button type="submit" variant="outline" className="cursor-pointer">
               Logout
             </Button>
@@ -161,7 +161,7 @@ export default function NotesDashboard({
                 </CardDescription>
               </CardHeader>
               <CardContent className="px-6 pb-6">
-                <form action="/api/notes/create" method="post" className="space-y-4">
+                <form action="/notes/create" method="post" className="space-y-4">
                   <div className="space-y-2">
                     <label
                       htmlFor="title"

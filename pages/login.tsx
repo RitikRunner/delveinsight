@@ -87,7 +87,7 @@ export default function LoginPage({ showError }: LoginPageProps) {
             </CardHeader>
 
             <CardContent className="space-y-5 px-8 pb-8">
-              <form action="/api/auth/login" method="post" className="space-y-4">
+              <form action="/auth/login" method="post" className="space-y-4">
                 <div className="space-y-2">
                   <label
                     htmlFor="email"

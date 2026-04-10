@@ -1,4 +1,4 @@
-import { sanitizeMultilineText, sanitizeText } from "@/lib/sanitize";
+import { sanitizeMultilineText, sanitizeText } from "./sanitize";
 
 export type ServerNote = {
   content: string;
